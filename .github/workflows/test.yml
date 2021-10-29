@@ -11,7 +11,7 @@ jobs:
       - run: echo " The ${{ github.repository }} repository has been cloned to the runner."
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }} > list
       - run: echo "This job's status is ${{ job.status }}."
       - name: Upload output file
         uses: actions/upload-artifact@v2
