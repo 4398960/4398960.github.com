@@ -13,3 +13,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: list
+          path: list
