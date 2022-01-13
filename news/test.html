@@ -1,1 +1,62 @@
+<html>
+<head>
+<title>test</title>
+<meta charset="utf-8">
+<script>localStorage.setItem('test', 21);</script>
+<style>
+	
+	canvas {
+    border: 1px solid rgb(206, 176, 176);
+}
+</style>
 
+</head>
+
+<body>
+<svg width="220" height="220"
+     viewBox="0 0 120 100"
+    >
+ <rect x="0" y="0" width="160" height="60" />
+ </svg>
+
+<h1>Here is SVG Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptatibus repellendus sapiente eligendi numquam vitae fugit porro nihil quam fuga minima officiis veniam, corporis expedita hic, similique tempora magni nobis. </h1>
+<?xml version="1.0"?>
+<svg width="220" height="120"
+     viewBox="0 0 160 120"
+     xmlns="http://www.w3.org/2000/svg">
+ <rect x="0" y="0" width="60" height="60" style="stroke: rgb(235, 44, 10);"/>
+       <rect x="25" y="25" 
+                 id="myRect" 
+                 rx="0.6" ry="0.6" 
+                 width="150" height="150" 
+                 fill="green" 
+                 stroke="yellow" stroke-width="9"/>
+  
+</svg>
+
+
+<script >
+  var blob = new Blob(["Hello, world!"], { type: 'text/plain' });
+var blobUrl = URL.createObjectURL(blob);
+console.log(blobUrl,'ggg', blob);
+var xhr = new XMLHttpRequest;
+xhr.responseType = 'blob';
+
+xhr.onload = function() {
+   var recoveredBlob = xhr.response;
+
+   var reader = new FileReader;
+
+   reader.onload = function() {
+     var blobAsDataUrl = reader.result;
+     window.location = blobAsDataUrl;
+   };
+
+   reader.readAsDataURL(recoveredBlob);
+};
+
+xhr.open('GET', blobUrl);
+xhr.send();
+</script>
+</body>
+</html>
